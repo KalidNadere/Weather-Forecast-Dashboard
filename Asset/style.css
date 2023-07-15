@@ -1,5 +1,5 @@
 body {
-  background: url(/Asset/header\ image.jpg);
+  background: url(/Asset/images/header\ image.jpg);
   background-size:cover;
   display: flexbox;
   flex-wrap: wrap;
@@ -93,7 +93,7 @@ button:hover {
 }
 
 #footer {
-  background: url(/Asset/fourseasonsarrows_c.webp);
+  background: url(/Asset/images/fourseasonsarrows_c.webp);
   position: absolute;
   bottom: 0px;
   left: 0px;

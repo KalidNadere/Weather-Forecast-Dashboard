@@ -58,5 +58,48 @@ function displayCurrentWeather(data) {
   `;
 
   currentWeather.innerHTML = currentWeatherHTML;
-  
+
+// Save current weather data to local storage
+  localStorage.setItem('currentWeather', JSON.stringify(data));
+}
+
+// Heler function to convert Kelvin to Celsius
+function convertKelvinToCelsius(kelvin) {
+  return Math.round(kelvin - 273.15);
+}
+
+// Display forecast data
+function displayForecast(data) {
+  const forecastData = data.list.slice(0,5); // Take first 5 days of forecast
+
+  const forecastHTML = '';
+  forecastData.forEach((item, index) => {
+    const date = new Date(item.dt * 1000).toLocaleDateString();
+    const icon = item.weather[0].icon;
+    const temperature = convertKelvinToCelsius(item.main.temp);
+    const humidity = item.main.humidity;
+    const windSpeed = item.wind.speed;
+
+  // Add days to current date to get the forecast date
+    const forecastDate = new Date();
+    forecastDate.setDate(forecastDate.getDate() + index + 1);
+    const forecastDateString = forecastDate.toLocaleDateString();
+
+    const forecastCardHTML = `
+    <div class="forecast-card">
+    <h3>${forecastDateString}</h3>
+    <img src="https://openweathermap.org/img/wn/${icon}.png" alt="Weather Icon">
+    <p>Temperature: ${temperature} &#8451;</p>
+    <p>Humidity: ${humidity}%</p>
+    <p>Wind Speed: ${windSpeed} m/s</p>
+    </div>
+    `;
+
+    forecastHTML += forecastCardHTML;
+  });
+
+  forecast.innerHTML = forecastHTML;
+
+// Save forecast data to local storage
+  localStorage.setItem('forecasData', JSON.stringify(data.list));
 }
