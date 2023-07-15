@@ -16,10 +16,10 @@ body {
 
 #header {
   color: rgb(237, 231, 227);
-  background-color: rgb(56, 169, 217);
-  width: 105%;
+  /* background-color: rgb(56, 169, 217); */
+  /* width: 105%;
   right: 7px;
-  position: relative;
+  position: relative; */
 }
 
 .left-section {
@@ -87,7 +87,7 @@ button:hover {
   width: calc(20% - 10px);
   margin-bottom: 10px;
   padding: 10px;
-  border: 1px solid #ccc;
+  border: 2x solid #8a1d1d;
   font-weight: bolder;
   font-size: 20px;
 }
