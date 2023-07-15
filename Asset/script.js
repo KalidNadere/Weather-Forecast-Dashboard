@@ -103,3 +103,31 @@ function displayForecast(data) {
 // Save forecast data to local storage
   localStorage.setItem('forecasData', JSON.stringify(data.list));
 }
+
+// Save search history
+function saveSearchHistory(city) {
+  const searchHistoryItem = document.createElement('p');
+  searchHistoryItem.textContent = city;
+  searchHistoryItem.addEventListener('click', function() {
+    getWeather(city);
+  });
+
+// Limit the number of history items to 10
+  if (searchHistory.childElementCount >= 10) {
+    searchHistory.removeChild(searchHistory.lastElementChild);
+  }
+
+// Insert new search history item at the top of list
+  searchHistory.insertBefore(searchHistoryItem, searchHistory.firstElementChild);
+
+  updateSearchHistoryLocalStorage();
+}
+
+// Update search history to local storage
+  function updateSearchHistoryLocalStorage() {
+    const historyItems = Array.from(searchHistory.children);
+    const history = historyItems.map(item => item.textContent);
+    localStorage.setItem('searchHistory', JSON.stringify(history));
+  }
+
+  
