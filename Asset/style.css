@@ -1,0 +1,81 @@
+body {
+  background-image: url(./header\ image.jpg);
+  background-size: cover;
+  display: flexbox;
+  flex-wrap: wrap;
+}
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+}
+
+#header {
+  color: rgb(32, 46, 73);
+}
+
+.left-section {
+  width: 18%;
+  font-weight: bolder;
+  color: antiquewhite;
+}
+
+.right-section {
+  width: 75%;
+  position: absolute;
+  left: 22%;
+  padding: 0 0 0 3px;
+}
+
+h1 {
+  text-align: center;
+}
+
+#search-form {
+  margin-bottom: 20px;
+}
+
+#city-input {
+  font-size: 16px;
+}
+
+button {
+  cursor: pointer;
+  width: 90px;
+  font-weight: bolder;
+  height: 25px;
+}
+
+#search-history {
+  font-size: 20px;
+}
+
+#search-history p {
+  color: rgb(0, 2, 3);
+  background-color: rgb(149, 173, 188);
+  padding: 3px 10px;
+  margin-right: 10px;
+  cursor: pointer;
+  width: 55%;
+}
+
+#current-weather {
+  margin-bottom: 20px;
+}
+
+#forecast-heading.hidden {
+  display: none;
+}
+#forecast {
+  display: flex;
+}
+.forecast-card {
+  width: calc(20% - 10px);
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+}
