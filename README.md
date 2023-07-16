@@ -27,7 +27,8 @@ https://kalidnadere.github.io/Weather-Forecast-Dashboard/
 ## Screenshot of deployed website
 ![Deployed page Screenshot](https://github.com/KalidNadere/Weather-Forecast-Dashboard/assets/131591052/1bd4c9e7-06c8-438a-8e71-eff06927f3d7)
 
-![Deployed webpage Screenshot 2](https://github.com/KalidNadere/Weather-Forecast-Dashboard/assets/131591052/3253d04c-d382-460b-a0fe-7995f9e4bd85)
+![Screenshot 2023-07-16 at 6 18 46 pm](https://github.com/KalidNadere/Weather-Forecast-Dashboard/assets/131591052/f5c71b78-d0b8-4a2a-be3f-196c36af7a30)
+
 
 
 
