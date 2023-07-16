@@ -11,14 +11,12 @@ Upon refreshing the page, the app will display the weather information for the l
 when incorrect name is entered or when no text is entered in the search form, an error modal will pop up, notifying the user to enter correct city name. This modal can be closed by pressing x.
 
 
-## Deployed app website
-
 ## Technologies used
-VS Code
-HTML
-CSS
-JavaScript
-OpenWeatherMap
+* VS Code
+* HTML
+* CSS
+* JavaScript
+* OpenWeatherMap
 
 ## Deployed webpage link
 https://kalidnadere.github.io/Weather-Forecast-Dashboard/
