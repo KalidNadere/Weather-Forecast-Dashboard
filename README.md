@@ -20,7 +20,10 @@ CSS
 JavaScript
 OpenWeatherMap
 
+
 ## Screenshot of deployed website
+![Deployed page Screenshot](https://github.com/KalidNadere/Weather-Forecast-Dashboard/assets/131591052/1bd4c9e7-06c8-438a-8e71-eff06927f3d7)
+
 
 
 
