@@ -16,10 +16,12 @@ body {
 
 #header {
   color: rgb(237, 231, 227);
-  background-color: rgb(53, 167, 216);
+  background-color: rgb(9, 102, 142);
   width: 30%;
   left: 35%;
   position: relative;
+  font-weight: bolder;
+  border-radius: 2%;
 }
 
 .left-section {
@@ -49,10 +51,11 @@ h1 {
 
 button {
   cursor: pointer;
-  width: 90px;
+  width: 100px;
   font-weight: bolder;
   height: 24px;
   font-size: 17px;
+  position: absolute;
 }
 button:hover {
   opacity: 0.7;
@@ -97,9 +100,9 @@ button:hover {
   top: 10%;
   left: 45%;
   display: none;
-  background-color:rgba(162, 181, 208, 0.523);
+  background: url(./images/rain\ gif.gif);
   padding: 1px 10px;
-  color: #6c0d0d;
+  color: #ffffff;
   font-weight: bolder;
 }
 
@@ -111,8 +114,9 @@ button:hover {
   top: 0%;
   position: absolute;
   right: 5%;
+  color: black;
 }
 
 .close:hover {
-  color: #161212;
+  color: #940a0a;
 }
