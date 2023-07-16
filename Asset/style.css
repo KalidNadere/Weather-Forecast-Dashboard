@@ -1,5 +1,5 @@
 body {
-  background: url(/Asset/images/header\ image.jpg);
+  background: url(./images/header\ image.jpg);
   background-size:cover;
   display: flexbox;
   flex-wrap: wrap;
@@ -11,15 +11,15 @@ body {
   padding: 20px;
   display: flex;
   justify-content: space-between;
-  list-style: none;
+  list-style-type: none;
 }
 
 #header {
   color: rgb(237, 231, 227);
-  /* background-color: rgb(56, 169, 217); */
-  /* width: 105%;
+  background-color: rgb(103, 191, 229);
+  width: 105%;
   right: 7px;
-  position: relative; */
+  position: relative;
 }
 
 .left-section {
@@ -30,7 +30,7 @@ body {
 
 .right-section {
   width: 75%;
-  position: absolute;
+  position:absolute;
   left: 22%;
   padding: 0 0 0 3px;
 }
@@ -84,19 +84,19 @@ button:hover {
   display: flex;
 }
 .forecast-card {
-  width: calc(20% - 10px);
+  width: calc(25% - 3%);
   margin-bottom: 10px;
   padding: 10px;
-  border: 2x solid #8a1d1d;
+  border: 1px solid rgb(96, 90, 90);
   font-weight: bolder;
   font-size: 20px;
 }
 
-#footer {
-  background: url(/Asset/images/fourseasonsarrows_c.webp);
+/* #footer {
+  background: url(./images/fourseasonsarrows_c.webp);
   position: absolute;
   bottom: 0px;
   left: 0px;
   width: 100%;
-  height: 200px;
-}
+  height: 305px;
+} */
