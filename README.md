@@ -8,7 +8,7 @@ When a user searches for a city name, the app will then display data for tempera
 
 It also saves upto 10 previously searched cities, until refreshed, thereupon clearing the history list.
 Upon refreshing the page, the app will display the weather information for the last searched city.
-
+when incorrect name is entered or when no text is entered in the search form, an error modal will pop up, notifying the user to enter correct city name. This modal can be closed by pressing x.
 
 
 ## Deployed app website

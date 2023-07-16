@@ -5,6 +5,10 @@ const searchHistory = document.getElementById('search-history');
 const currentWeather = document.getElementById('current-weather');
 const forecastHeading = document.getElementById('forecast-heading');
 const forecast = document.getElementById('forecast');
+const errorModal = document.getElementById('error-modal');
+
+// Hide modal by default
+errorModal.classList.add('hidden');
 
 // Event listener for form submission
 form.addEventListener('submit', function(event) {
@@ -18,26 +22,86 @@ function getWeather(city) {
 
 // Fetch current weather data
 fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`)
-    .then(response => response.json())
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Please enter a valid city name.');
+      }
+      return response.json();
+    })
     .then(data => {
       displayCurrentWeather(data);
       saveSearchHistory(city);
     })
     .catch(error => {
       console.error('Error fetching current weather:', error);
+      displayErrorModal(error.message);
     });
 
   // Fetch 5-Day forecast data
   fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}`)
-    .then(response => response.json())
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Please enter a valid city name.');
+      }
+      return response.json();
+    })
     .then(data => {
       displayForecast(data);
       forecastHeading.classList.remove('hidden'); // Show the forecast heading
     })
     .catch(error => {
       console.error('Error fetching forecast:', error);
+      displayErrorModal(error.message);
     });
 }
+
+// Display error modal with error message
+function displayErrorModal(errorMessage) {
+  var modal = document.getElementById('error-modal');
+  var modalContent = document.querySelector('.modal-content');
+  var errorMessageElement = document.getElementById('error-message');
+  
+  errorMessageElement.innerHTML = `<h2>ERROR!</h2><p>${errorMessage}</p>`;
+  
+  modal.style.display = 'block';
+  
+  // Close modal when user click the close button
+  var closeBtn = document.querySelector('.close');
+  closeBtn.addEventListener('click', function() {
+    closeModal();
+  });
+  
+  // Close the modal when user click anywhere outside the modal content
+  window.addEventListener('click', function(event) {
+    if (event.target === modal || event.target === modalContent) {
+      closeModal();
+    }
+  });
+}
+
+// Function to close modal
+function closeModal() {
+  var modal = document.getElementById('error-modal');
+  modal.style.display = 'none';
+}
+
+
+
+// Save the modal state to local storage
+function saveModalState(isClosed) {
+  localStorage.setItem('modalClosed', isClosed ? 'true' : 'false');
+}
+
+// Check if modal should be closed based on previous state
+var modalClosed = localStorage.getItem('modalClosed');
+if (modalClosed === 'true') {
+  errorModal.classList.add('hidden');
+}
+
+// Reset modal state when the page is loaded
+window.addEventListener('load', function() {
+  saveModalState(false);
+});
 
 // Display current weather data
 function displayCurrentWeather(data) {
