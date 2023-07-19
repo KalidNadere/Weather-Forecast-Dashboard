@@ -170,6 +170,13 @@ function displayForecast(data) {
 
 // Save search history
 function saveSearchHistory(city) {
+  
+  // Check if city is already in the search history
+  var existingItem = Array.from(searchHistory.children).find(item => item.textContent === city);
+  if (existingItem) {
+    return; // exit function if city is already in the search history
+  }
+  
   var searchHistoryItem = document.createElement('p');
   searchHistoryItem.textContent = city;
   searchHistoryItem.addEventListener('click', function() {
